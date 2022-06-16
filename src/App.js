@@ -5,6 +5,7 @@ import { dict } from "./Weathercode";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
+
 function App() {
   const [temperature, setTemperature] = useState();
   const [weatherCode, setWeatherCode] = useState();
@@ -22,22 +23,29 @@ function App() {
         res.current_weather.weathercode
       );
     });
-
+ 
   return (
     <div className="App">
-      <h1>Weather</h1>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top"  src={dict[weatherCode]?.image.url} alt={dict[weatherCode].image.alt} />
-        <Card.Body>
-          <Card.Title>Forecast</Card.Title>
-          <Card.Text>
-            search forecast
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      <p>Temperature:{temperature} </p>
-      <p>Code:{dict[weatherCode]?.weather}</p>
+      <div className="clouds">
+	<div className="cloud x1"></div>
+	<div className="cloud x2"></div>
+	<div className="cloud x3"></div>
+	<div className="cloud x4"></div>
+	<div className="cloud x5"></div>
+</div>
+
+      <div className="forecast">
+        <img className="img"
+          src={dict[weatherCode]?.image.url}
+          alt={dict[weatherCode]?.image.alt}
+        />
+        <div>
+          <Card.Title style={{fontSize: "50px", fontFamily: "Arial, Helvetica, sans-serif"}}>{dict[weatherCode]?.weather}</Card.Title>
+          <Card.Text className="temp">{temperature} ºC </Card.Text>
+        </div>
+      </div>
+      <p></p>
+
       <footer>Created by Rozina Hussain</footer>
     </div>
   );
