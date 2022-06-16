@@ -8,31 +8,29 @@ import { Button } from "react-bootstrap";
 function App() {
   const [temperature, setTemperature] = useState();
   const [weatherCode, setWeatherCode] = useState();
-  const [search, setSearch] = useState()
-
-  const urlForecast =
-    "https://api.open-meteo.com/v1/forecast?latitude=51.5002&longitude=-0.1262&current_weather=true&timezone=Europe%2FLondon";
+  const [search, setSearch] = useState();
 
   function getWeather() {
-    const urlCity = "https://geocoding-api.open-meteo.com/v1/search?name="+search;
+    const urlCity =
+      "https://geocoding-api.open-meteo.com/v1/search?name=" + search;
     fetch(urlCity)
       .then((data) => data.json())
-      .then((jsonData)=>{
-const longitude = jsonData.results[0].longitude
-const latitude = jsonData.results[0].latitude
-
-        
-      })
-
-
-      // .then((res) => {
-      //   setTemperature(res.current_weather.temperature);
-      //   setWeatherCode(res.current_weather.weathercode);
-      //   console.log(
-      //     res.current_weather.temperature,
-      //     res.current_weather.weathercode
-      //   );
-      // });
+      .then((jsonData) => {
+        const longitude = jsonData.results[0].longitude;
+        const latitude = jsonData.results[0].latitude;
+        const urlForecast =
+          "https://api.open-meteo.com/v1/forecast?current_weather=true&timezone=Europe%2FLondon&longitude=" +
+          longitude +
+          "&latitude=" +
+          latitude;
+        fetch(urlForecast)
+          .then((data) => data.json())
+          .then((jsonData) => {
+            console.log(jsonData);
+            setTemperature(jsonData.current_weather.temperature);
+            setWeatherCode(jsonData.current_weather.weathercode);
+          });
+      });
   }
 
   return (
@@ -64,7 +62,8 @@ const latitude = jsonData.results[0].latitude
         </div>
       </div>
       <div className="form">
-        <input onChange={e=>setSearch(e.target.value)}
+        <input
+          onChange={(e) => setSearch(e.target.value)}
           id="Search"
           type="text"
           placeholder="Search city here..."
