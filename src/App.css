@@ -4,6 +4,16 @@
   height: 100vh;
 }
 
+.go {
+  font-style: bold;
+}
+
+.form {
+  width: 500px;
+  position: relative;
+  margin: auto;
+}
+
 .img {
   width: 500px;
   position: relative;

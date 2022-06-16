@@ -44,7 +44,11 @@ function App() {
           <Card.Text className="temp">{temperature} ºC </Card.Text>
         </div>
       </div>
-      <p></p>
+      <form className="form">
+      <input id="Search" type="text" class="input" placeholder="Search city here..." />
+      <button id="clear" class="go">Go</button>
+      </form>
+              
 
       <footer>Created by Rozina Hussain</footer>
     </div>
