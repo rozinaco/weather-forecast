@@ -2,8 +2,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 import { dict } from "./Weathercode";
-import { Card } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import { Button, InputGroup, FormControl, Card } from "react-bootstrap";
+import { FaSearchLocation } from "react-icons/fa";
 
 function App() {
   const [temperature, setTemperature] = useState();
@@ -62,15 +62,19 @@ function App() {
         </div>
       </div>
       <div className="form">
-        <input
-          onChange={(e) => setSearch(e.target.value)}
-          id="Search"
-          type="text"
-          placeholder="Search city here..."
-        />
-        <button id="clear" onClick={getWeather}>
-          Go
-        </button>
+        <InputGroup className="mb-3">
+          <FormControl
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search city here..."
+          />
+          <Button
+            variant="outline-secondary"
+            id="button-addon2"
+            onClick={getWeather}
+          >
+            <FaSearchLocation />
+          </Button>
+        </InputGroup>
       </div>
 
       <footer>Created by Rozina Hussain</footer>
