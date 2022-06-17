@@ -36,19 +36,11 @@ function App() {
 
   return (
     <div className="App">
-      <div className="clouds">
-        <div className="cloud x1"></div>
-        <div className="cloud x2"></div>
-        <div className="cloud x3"></div>
-        <div className="cloud x4"></div>
-        <div className="cloud x5"></div>
-      </div>
-
-
-      <video autoPlay loop className="default">
+      
+      <video autoPlay loop muted className="default">
         <source src="Default.mp4" type="video/mp4"/>
         </video>
-
+       
       <div className="forecast">
         
         <div>
@@ -68,6 +60,9 @@ function App() {
           <FormControl
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search city here..."
+            onKeyDown={(e) => {
+              if(e.key==="Enter"){getWeather()}
+            }}
           />
           <Button
             variant="outline-secondary"
@@ -76,6 +71,7 @@ function App() {
           >
             <FaSearchLocation />
           </Button>
+          
         </InputGroup>
       </div>
 
