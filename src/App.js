@@ -5,7 +5,6 @@ import { dict } from "./Weathercode";
 import { Button, InputGroup, FormControl, Card } from "react-bootstrap";
 import { FaSearchLocation } from "react-icons/fa";
 
-
 function App() {
   const [temperature, setTemperature] = useState();
   const [weatherCode, setWeatherCode] = useState();
@@ -33,16 +32,45 @@ function App() {
           });
       });
   }
-
+console.log(weatherCode)
   return (
     <div className="App">
-      
-      <video autoPlay loop muted className="default">
-        <source src="Default.mp4" type="video/mp4"/>
+      {[0, 1, 2, 3].includes(weatherCode) ? (
+        <video autoPlay loop muted className="default">
+          <source src="Default.mp4" type="video/mp4" alt="video"/>
         </video>
-       
-      <div className="forecast">
+      ) : [
+          51,
+          53,
+          55,
+          56,
+          57,
+          61,
+          63,
+          65,
+          66,
+          67,
+          80,
+          81,
+          82,
+          95,
+          96,
+          99,
+        ].includes(weatherCode) ? (
+        <img
+          className="rain"
+          src="https://media.giphy.com/media/PspWBxW4y3Kfu/giphy-downsized-large.gif" alt="rain"
+        />
+      ) : [71, 73, 75, 77, 85, 86].includes(weatherCode) ? (
+        <img className="snow" src="https://tenor.com/bOx3M.gif" alt="snow"/>
         
+      ) : (
+        <video autoPlay loop muted className="default">
+          <source src="Default.mp4" type="video/mp4" />
+        </video>
+      )}
+
+      <div className="forecast">
         <div>
           <Card.Title
             style={{
@@ -61,7 +89,9 @@ function App() {
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search city here..."
             onKeyDown={(e) => {
-              if(e.key==="Enter"){getWeather()}
+              if (e.key === "Enter") {
+                getWeather();
+              }
             }}
           />
           <Button
@@ -71,7 +101,6 @@ function App() {
           >
             <FaSearchLocation />
           </Button>
-          
         </InputGroup>
       </div>
 

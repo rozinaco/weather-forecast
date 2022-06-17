@@ -4,6 +4,15 @@
 
 }
 
+.rain {
+  height: 900px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+}
+
 .form {
   width: 500px;
   position: relative;
@@ -26,7 +35,7 @@
 }
 
 .forecast {
-  height: 20px;
+
   width: 800px;
   margin: auto;
 }
@@ -35,6 +44,7 @@
 .temp {
 font-size: 80px;
 font-family: Arial, Helvetica, sans-serif;
+height: fit-content;
 
 }
 
