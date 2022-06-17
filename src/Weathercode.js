@@ -9,7 +9,7 @@ export const dict = {
     },
   },
   1: {
-    weather: "Mainly clear",
+    weather: "Mainly Clear",
     image:
       {
       url: "https://images.unsplash.com/photo-1591797879399-db2ba1b500a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2xvdWR5JTIwY2xlYXIlMjBza2llc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
@@ -17,7 +17,7 @@ export const dict = {
     },
   },
   2: {
-    weather: "Partly cloudy",
+    weather: "Partly Cloudy",
     image:
       {
       url: "https://images.unsplash.com/photo-1649434881843-50961665a3aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGNsb3VkeSUyMGNsZWFyJTIwc2tpZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
@@ -41,7 +41,7 @@ export const dict = {
     },
   },
   48: {
-    weather: "Depositing rime fog",
+    weather: "Depositing Rime Fog",
     image:
       {
       url: "https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -65,7 +65,7 @@ export const dict = {
     },
   },
   55: {
-    weather: "Dense intensity",
+    weather: "Dense Intensity",
     image:
       {
       url: "https://media.istockphoto.com/photos/rain-is-falling-in-a-puddle-in-the-garden-picture-id1292942434?b=1&k=20&m=1292942434&s=170667a&w=0&h=dAypvtzYHLZ2QSUNSWASEWvUwDNg9Sso3yb9QfByDks=",
@@ -89,7 +89,7 @@ export const dict = {
     },
   },
   61: {
-    weather: "light Rain Intensity",
+    weather: "Light Rain Intensity",
     image:
       {
       url: "https://media.giphy.com/media/PspWBxW4y3Kfu/giphy-downsized-large.gif",

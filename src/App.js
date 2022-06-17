@@ -9,6 +9,7 @@ function App() {
   const [temperature, setTemperature] = useState();
   const [weatherCode, setWeatherCode] = useState();
   const [search, setSearch] = useState();
+  const isMobile = window.innerWidth < 720;
 
   function getWeather() {
     const urlCity =
@@ -32,38 +33,24 @@ function App() {
           });
       });
   }
-console.log(weatherCode)
   return (
     <div className="App">
-      {[0, 1, 2, 3].includes(weatherCode) ? (
-        <video autoPlay loop muted className="default">
-          <source src="Default.mp4" type="video/mp4" alt="video"/>
-        </video>
-      ) : [
-          51,
-          53,
-          55,
-          56,
-          57,
-          61,
-          63,
-          65,
-          66,
-          67,
-          80,
-          81,
-          82,
-          95,
-          96,
-          99,
-        ].includes(weatherCode) ? (
+      {[
+        51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82, 95, 96, 99,
+      ].includes(weatherCode) ? (
         <img
           className="rain"
-          src="https://media.giphy.com/media/PspWBxW4y3Kfu/giphy-downsized-large.gif" alt="rain"
+          src="https://media.giphy.com/media/PspWBxW4y3Kfu/giphy-downsized-large.gif"
+          alt="rain"
         />
       ) : [71, 73, 75, 77, 85, 86].includes(weatherCode) ? (
-        <img className="snow" src="https://tenor.com/bOx3M.gif" alt="snow"/>
-        
+        <img
+          className="snow"
+          src="https://i.pinimg.com/originals/27/73/cc/2773cc630bdb2060ff28a7d2902e926d.gif"
+          alt="snow"
+        />
+      ) : isMobile ? (
+        <img className="staticPhone" src="staticphone.jpg" />
       ) : (
         <video autoPlay loop muted className="default">
           <source src="Default.mp4" type="video/mp4" />
@@ -71,11 +58,11 @@ console.log(weatherCode)
       )}
 
       <div className="forecast">
-        <div>
+        <div className="tint">
           <Card.Title
             style={{
               fontSize: "50px",
-              fontFamily: "Arial, Helvetica, sans-serif",
+              fontFamily: "Abril Fatface, cursive",
             }}
           >
             {dict[weatherCode]?.weather}
@@ -94,16 +81,11 @@ console.log(weatherCode)
               }
             }}
           />
-          <Button
-            variant="outline-secondary"
-            id="button-addon2"
-            onClick={getWeather}
-          >
+          <Button variant="dark" id="button-addon2" onClick={getWeather}>
             <FaSearchLocation />
           </Button>
         </InputGroup>
       </div>
-
       <footer>Created by Rozina Hussain</footer>
     </div>
   );

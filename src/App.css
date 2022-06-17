@@ -1,7 +1,6 @@
 .App {
   text-align: center;
- 
-
+  font-family: 'Abril Fatface', cursive;
 }
 
 .rain {
@@ -13,8 +12,27 @@
   top: 0;
 }
 
+.staticPhone{
+width: 100%;
+min-height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+}
+
+.snow {
+  height: 900px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+}
+
 .form {
-  width: 500px;
+  width: 90%;
   position: relative;
   margin: auto;
 }
@@ -34,17 +52,23 @@
   
 }
 
+
 .forecast {
 
-  width: 800px;
+  width: 100%;
   margin: auto;
+  font-family: 'Abril Fatface', cursive;
 }
 
+/* .tint {
+  background-color: rgb(181, 206, 226, 0.5)
+} */
 
 .temp {
 font-size: 80px;
-font-family: Arial, Helvetica, sans-serif;
+font-family: 'Abril Fatface', cursive;
 height: fit-content;
+
 
 }
 
