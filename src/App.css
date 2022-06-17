@@ -39,9 +39,9 @@ min-height: 100vh;
 
 .default {
     position: absolute;
+    width: 100%;
     left: 0px;
     top: 0px;
-    height: 100vh;
     z-index: -1;
 }
 
