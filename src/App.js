@@ -5,6 +5,7 @@ import { dict } from "./Weathercode";
 import { Button, InputGroup, FormControl, Card } from "react-bootstrap";
 import { FaSearchLocation } from "react-icons/fa";
 
+
 function App() {
   const [temperature, setTemperature] = useState();
   const [weatherCode, setWeatherCode] = useState();
@@ -43,12 +44,13 @@ function App() {
         <div className="cloud x5"></div>
       </div>
 
+
+      <video autoPlay loop className="default">
+        <source src="Default.mp4" type="video/mp4"/>
+        </video>
+
       <div className="forecast">
-        <img
-          className="img"
-          src={dict[weatherCode]?.image.url}
-          alt={dict[weatherCode]?.image.alt}
-        />
+        
         <div>
           <Card.Title
             style={{

@@ -28,7 +28,7 @@ export const dict = {
     weather: "Overcast",
     image:
       {
-      url: "https://images.unsplash.com/photo-1520934116-55b3399a0e81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80",
+      url: "https://t4.ftcdn.net/jpg/02/42/89/79/240_F_242897921_CBSakd1Ek3fPXrqW5f72Y9E09sdZ7v19.jpg",
       alt: "Overcast",
     },
   },
